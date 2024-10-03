@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+        content="Continual learning robot planner using foundation models for generative model building through interaction.">
   <meta name="keywords" content="CLIMB-Planner, plan-with-climb, continual learning, foundation model planning">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CLIMB: Language-guided continual learning for robot task planning</title>
@@ -303,7 +303,7 @@
   </div>
 </section>
 
-
+<!-- IsaacLab Demos -->
 <section class="section">
   <div class="container is-max-desktop">
       
@@ -315,14 +315,68 @@
     </div>
 
     <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">IsaacLab Task Playground</h2>
+        <p>
+          We have developed a simulation environment in IsaacLab where you can experiment with
+          different task and problem configurations.
+        </p>
+      </div>
+    </div>
+
+    <section class="hero is-light is-small">
+      <div class="hero-body">
+        <div class="container">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-stack3">
+              <video poster="" id="stack3" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/isaaclab/stack3.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-stack4">
+              <video poster="" id="stack4" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/isaaclab/stack4.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-stack6">
+              <video poster="" id="stack6" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/isaaclab/stack6.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-line">
+              <video poster="" id="line" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/isaaclab/line.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-line-back">
+              <video poster="" id="line-back" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/isaaclab/line-back.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-arrange-l">
+              <video poster="" id="arrange-l" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/isaaclab/arrange-l.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End IsaacLab Demos -->
+
+    <br>
+
+    <div class="columns is-centered">
 
       <!-- Visual Effects. -->
       <div class="column">
         <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
+          <h2 class="title is-3">Observing Failures</h2>
           <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
+            TODO: This will be an example of a task that could not be completed zero-shot. It will show the robot failing to complete a task and the observation that results from it.
           </p>
           <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/dollyzoom-stacked.mp4"
@@ -334,12 +388,11 @@
 
       <!-- Matting. -->
       <div class="column">
-        <h2 class="title is-3">Matting</h2>
+        <h2 class="title is-3">Learning from Experience</h2>
         <div class="columns is-centered">
           <div class="column content">
             <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
+              TODO: This will follow on from the example to the left, demonstrating how observations can be leveraged to improve PDDL domain models.
             </p>
             <video id="matting-video" controls playsinline height="100%">
               <source src="./static/videos/matting.mp4"
@@ -352,70 +405,76 @@
     </div>
     <!--/ Matting. -->
 
-    <!-- Animation. -->
+    <!-- Demos on real -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
-
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <!--/ Re-rendering. -->
-
+        <h2 class="title is-3">More Demonstrations</h2>
+        <p>
+          Here are more examples of the successes and failures of the CLIMB framework.
+        </p>
       </div>
     </div>
-    / Animation.
 
+    <!-- NOTE: These should show both successful and failed attempts, not only good runs. -->
+    <section class="hero is-light is-small">
+      <div class="hero-body">
+        <div class="container">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-stack3">
+              <video poster="" id="stack3" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/real/stack3.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-stack4">
+              <video poster="" id="stack4" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/real/stack4.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-stack6">
+              <video poster="" id="stack6" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/real/stack6.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-line">
+              <video poster="" id="line" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/real/line.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-line-back">
+              <video poster="" id="line-back" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/real/line-back.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+            <div class="item item-arrange-l">
+              <video poster="" id="arrange-l" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/real/arrange-l.mp4"
+                        type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Demos on real -->
+
+    <!-- Prompts  -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">LLM Prompts</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            Below are the complete prompts that we use in each of the LLM modules. The demonstrations and results in this work utilize the <em>gpt-4o-2024-08-06</em> snapshot from OpenAI.
+          </p>
+          <p>
+            TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- End Prompts -->
 
     <!-- Concurrent Work. -->
     <div class="columns is-centered">
