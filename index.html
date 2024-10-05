@@ -175,117 +175,62 @@
 </section>
 
 
-<section class="hero teaser">
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
         <source src="./static/videos/teaser.mp4"
                 type="video/mp4">
       </video>
+      <img src="static/images/fig-overview.png" width="100%"/>
       <h2 class="subtitle has-text-centered">
         CLIMB builds a world model of a robot's environment through continual learning during completion of tasks.
       </h2>
     </div>
   </div>
-</section>
+</section> -->
 
-<!-- TODO: Add demo clips of CLIMB doing interesting things -->
-<!-- 
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
+<!-- Abstract. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We present CLIMB, a continual
+            learning framework for robot task planning that leverages
+            foundation models and execution feedback to guide domain
+            model construction.
+          </p>
+          <p>
+            CLIMB incrementally builds a PDDL model of
+            its operating environment while completing tasks, creating a
+            set of world state predicates that function as a representation
+            of the causal structure present in the environment. CLIMB's
+            continual learning approach enables it to solve classes of
+            problems it has previously encountered without needing to
+            relearn task-specific information, endowing it with the ability
+            to expand its environment representation to novel problem
+            formulations.
+          </p>
+          <p>
+            We show CLIMB to be a capable zero-shot planner for simple tasks. 
+            For complex tasks with non-obvious predicates, we demonstrate CLIMBs 
+            ability to self-improve through iterative executiong and feedback, 
+            resulting in superior performance once a PDDL model has been established.
+          </p>
         </div>
       </div>
     </div>
   </div>
-</section> -->
+</section>
+<!--/ Abstract. -->
 
-
+<!-- Paper video. -->
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
-            <p>
-              We present CLIMB, a continual
-              learning framework for robot task planning that leverages
-              foundation models and execution feedback to guide domain
-              model construction.
-            </p>
-            <p>
-              CLIMB incrementally builds a PDDL model of
-              its operating environment while completing tasks, creating a
-              set of world state predicates that function as a representation
-              of the causal structure present in the environment. CLIMB's
-              continual learning approach enables it to solve classes of
-              problems it has previously encountered without needing to
-              relearn task-specific information, endowing it with the ability
-              to expand its environment representation to novel problem
-              formulations.
-            </p>
-            <p>
-              We show CLIMB to be a capable zero-shot planner for simple tasks. 
-              For complex tasks with non-obvious predicates, we demonstrate CLIMBs 
-              ability to self-improve through iterative executiong and feedback, 
-              resulting in superior performance once a PDDL model has been established.
-            </p>
-          </div>
-        </div>
-      </div>
-      <!--/ Abstract. -->
-
-      <!-- Paper video. -->
-      <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
@@ -298,20 +243,42 @@
         </div>
       </div>
     </div>
-    <!--/ Paper video. -->
   </div>
 </section>
+<!--/ Paper video. -->
+
+<!-- Architecture -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Architecture</h2>
+        <img src="static/images/fig-architecture.PNG" width="100%" />
+        <br>
+        <div class="content has-text-justified">
+          The CLIMB Planning Framework includes independent modules for problem translation, planning, 
+          predicate generation, verification, execution, and perception. CLIMB is comprised of modules 
+          that generate the PDDL, construct a plan trace for the given problem, observe the robot's 
+          performance, and refine the PDDL through observation and queried solutions from the LLM. Each 
+          of the LLM modules implements OpenAI's gpt-4o-2024-08-06 model. 
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- / Architecture -->
+
 
 <!-- IsaacLab Demos -->
 <section class="section">
   <div class="container is-max-desktop">
       
     <!-- TODO: Remove this after the below sections are completed. -->
-    <div class="columns is-centered">
+    <!-- <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">(COMING SOON... Additional demonstration videos and examples of the CLIMB architecture.)</h2>
       </div>
-    </div>
+    </div> -->
 
     <div class="columns is-centered">
       <div class="column is-full-width">
