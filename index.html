@@ -120,15 +120,15 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href=""
+                <a href="./static/docs/climb_paper.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>Paper (Coming Soon)</span>
+                  <span>Paper</span>
                 </a>
               </span>
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -136,9 +136,9 @@
                   </span>
                   <span>arXiv (Coming Soon)</span>
                 </a>
-              </span>
+              </span> -->
               <!-- Video Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -146,7 +146,7 @@
                   </span>
                   <span>Video (Coming Soon)</span>
                 </a>
-              </span>
+              </span> -->
               <!-- Code Link.
               <span class="link-block">
                 <a href=""
@@ -272,14 +272,6 @@
 <!-- IsaacLab Demos -->
 <section class="section">
   <div class="container is-max-desktop">
-      
-    <!-- TODO: Remove this after the below sections are completed. -->
-    <!-- <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">(COMING SOON... Additional demonstration videos and examples of the CLIMB architecture.)</h2>
-      </div>
-    </div> -->
-
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">IsaacLab Task Playground</h2>
@@ -341,10 +333,9 @@
     <!-- End IsaacLab Demos -->
 
     <br>
-
     <div class="columns is-centered">
 
-      <!-- Visual Effects. -->
+      <!-- Observing Failures. -->
       <div class="column">
         <div class="content">
           <h2 class="title is-3">Observing Failures</h2>
@@ -358,9 +349,9 @@
           </video>
         </div>
       </div>
-      <!--/ Visual Effects. -->
+      <!--/ Observing Failures. -->
 
-      <!-- Matting. -->
+      <!-- Learning from Experience. -->
       <div class="column">
         <h2 class="title is-3">Learning from Experience</h2>
         <div class="columns is-centered">
@@ -378,14 +369,25 @@
         </div>
       </div>
     </div>
-    <!--/ Matting. -->
+    <!--/ Learning from Experience. -->
 
     <!-- Demos on real -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">More Demonstrations</h2>
+        <h2 class="title is-3">Real Robot Demonstrations</h2>
+        <img src="static/images/fig-real-demos.PNG" width="100%" />
+        <br>
         <p>
-          Here are more examples of the successes and failures of the CLIMB framework.
+          We demonstrate CLIMB's ability to learn from evaluations on real hardware. We have created a demonstration 
+          platform which mirrors the IsaacLab Blocksworld environment to evaluate the sim to real translation of CLIMB's 
+          observations and plans. To address the challenge of perception, we place AprilTag2 markers on the cubes and
+          perceive the scene using a wrist-mounted camera. By returning to a home position after each action, we can gather 
+          full pose information for all objects in the scene. The object and robot pose data gathered in this manner mirrors
+          the ground truth state information available in IsaacSim, resulting in similar performance across the two platforms.
+        </p>
+        <br>
+        <p>
+          Below are demonstrations of CLIMB solving problems and learning from failures in our BlocksWorld++ on real hardware.
         </p>
       </div>
     </div>
@@ -474,7 +476,7 @@
     <!-- End Prompts -->
 
     <!-- Concurrent Work. -->
-    <div class="columns is-centered">
+    <!-- <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Related Links</h2>
 
@@ -484,7 +486,7 @@
           </p>
           <p>
             TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO.
-          </p>
+          </p> -->
           <!-- <p>
             <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
             both use deformation fields to model non-rigid scenes.
@@ -495,9 +497,9 @@
           <p>
             There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
           </p> -->
-        </div>
+        <!-- </div>
       </div>
-    </div>
+    </div> -->
     <!--/ Concurrent Work. -->
 
   </div>
