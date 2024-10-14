@@ -174,21 +174,25 @@
   </div>
 </section>
 
-
-<!-- <section class="hero teaser">
+<!-- Paper video. -->
+<section class="section">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-      <img src="static/images/fig-overview.png" width="100%"/>
-      <h2 class="subtitle has-text-centered">
-        CLIMB builds a world model of a robot's environment through continual learning during completion of tasks.
-      </h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <!-- <h2 class="title is-3">Video</h2> -->
+        <div class="publication-video">
+          <video poster="" id="full-video" controls playsinline height="100%">
+            <source src="./static/videos/climb-full-video.mp4"
+                    type="video/mp4">
+          </video>
+          <!-- <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+        </div>
+      </div>
     </div>
   </div>
-</section> -->
+</section>
+<!--/ Paper video. -->
 
 <!-- Abstract. -->
 <section class="section">
@@ -227,26 +231,6 @@
 </section>
 <!--/ Abstract. -->
 
-<!-- Paper video. -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <video poster="" id="full-video" controls playsinline height="100%">
-            <source src="./static/videos/climb-full-video.mp4"
-                    type="video/mp4">
-          </video>
-          <!-- <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!--/ Paper video. -->
-
 <!-- Architecture -->
 <section class="section">
   <div class="container is-max-desktop">
@@ -265,76 +249,45 @@
       </div>
     </div>
   </div>
+  <!-- <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Improving Capabilities</h2>
+          <div class="content has-text-justified">
+            <p>
+              When attempting to build a pyramid, CLIMB is initially missing a precondition that the two base blocks must be adjacent. The resulting plan results in an observation that the block was placed between, but not on top of, the base blocks.
+            </p>
+          </div>
+          <img src="static/images/fig-logical-general.PNG" width="100%" />
+        </div>
+      </div>
+
+      <div class="column">
+        <h2 class="title is-3">Generalization Across Tasks</h2>
+        <div class="columns is-centered">
+          <div class="column content">
+            <div class="content has-text-justified">
+              <p>
+                Through iterative reprompting and refinement, CLIMB adds an additional precondition that 2 blocks must be adjacent for a third block to be spanned across them. Adding base adjacency solves the pyramid stacking problem.
+              </p>
+            </div>
+            <img src="static/images/fig-isaac-general.PNG" width="100%" />
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div> -->
+
 </section>
 <!-- / Architecture -->
 
 
-<!-- IsaacLab Demos -->
 <section class="section">
   <div class="container is-max-desktop">
+
     <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">IsaacLab Task Playground</h2>
-        <p>
-          We have developed a simulation environment in IsaacLab where you can experiment with
-          different task and problem configurations.
-        </p>
-      </div>
-    </div>
-
-    <section class="hero is-light is-small">
-      <div class="hero-body">
-        <div class="container">
-          <div id="results-carousel" class="carousel results-carousel">
-            <div class="item item-stack">
-              <video poster="" id="stack" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/isaaclab/render-stack.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item item-stack4">
-              <video poster="" id="stack4" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/isaaclab/render-stack-p04.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item item-line">
-              <video poster="" id="line" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/isaaclab/render-line.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item item-line-side-blocked">
-              <video poster="" id="line-side-blocked" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/isaaclab/render-line-side-blocked.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item item-line-side">
-              <video poster="" id="line-side" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/isaaclab/render-line-side.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item item-arrange-l">
-              <video poster="" id="arrange-l" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/isaaclab/render-l-success.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item pyramid1">
-              <video poster="" id="pyramid1" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/isaaclab/render-pyramid.mp4" type="video/mp4">
-              </video>
-            </div>
-            <div class="item pyramid2">
-              <video poster="" id="pyramid2" autoplay controls muted loop playsinline height="100%">
-                <source src="./static/videos/isaaclab/render-pyramid2.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- End IsaacLab Demos -->
-
-    <br>
-    <div class="columns is-centered">
-
       <!-- Observing Failures. -->
       <div class="column">
         <div class="content">
@@ -368,14 +321,15 @@
 
         </div>
       </div>
+      <!--/ Learning from Experience. -->
     </div>
-    <!--/ Learning from Experience. -->
 
     <!-- Demos on real -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Real Robot Demonstrations</h2>
         <img src="static/images/fig-real-demos.PNG" width="100%" />
+        <br>
         <br>
         <p>
           We demonstrate CLIMB's ability to learn from evaluations on real hardware. We have created a demonstration 
@@ -456,7 +410,112 @@
         </div>
       </div>
     </section>
-    <!-- End Demos on real -->
+  </div>
+</section>
+<!-- End Demos on real -->
+  
+<!-- IsaacLab Demos -->
+<section class="section">
+  <div class="container is-max-desktop">
+      <div class="columns is-centered">
+          <div class="column is-full-width">
+            <h2 class="title is-3">IsaacLab Task Playground</h2>
+            <p>
+              We have developed a simulation environment in IsaacLab to evaluate BlocksWorld and BlocksWorld++ problem cases. The IsaacLab environment
+              mirrors the physical robot system but abstracts away perception by directly accessing object state information. The information provided
+              to the LLM for error evaluation and improvment directly matches the physical robot embodiment.
+            </p>
+          </div>
+      </div>
+      
+    <!-- Main Examples -->
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <video poster="" id="stack" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/isaaclab/render-stack.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content">
+          <video poster="" id="stack4" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/isaaclab/render-stack-p04.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+              <video poster="" id="line" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/isaaclab/render-line.mp4" type="video/mp4">
+              </video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+              <video poster="" id="line-side-blocked" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/isaaclab/render-line-side-blocked.mp4" type="video/mp4">
+              </video>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+              <video poster="" id="line-side" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/isaaclab/render-line-side.mp4" type="video/mp4">
+              </video>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+            <video poster="" id="arrange-l" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/isaaclab/render-l-success.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+              <video poster="" id="pyramid1" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/isaaclab/render-pyramid.mp4" type="video/mp4">
+              </video>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+              <video poster="" id="pyramid2" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/videos/isaaclab/render-pyramid2.mp4" type="video/mp4">
+              </video>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="columns is-centered">
+          <div class="column content">
+            <!-- <video poster="" id="arrange-l" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/isaaclab/render-l-success.mp4" type="video/mp4">
+            </video> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End IsaacLab Demos -->
+
 
     <!-- Prompts  -->
     <!-- <div class="columns is-centered">
@@ -475,35 +534,34 @@
     </div> -->
     <!-- End Prompts -->
 
-    <!-- Concurrent Work. -->
-    <!-- <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
 
+<!-- Concurrent Work. -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Work</h2>
         <div class="content has-text-justified">
           <p>
-            We would like to highlight some other work on language-guided robot planning.
+            We would like to highlight some other work on language-guided robot planning:
           </p>
-          <p>
-            TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO TODO.
-          </p> -->
-          <!-- <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p> -->
-        <!-- </div>
+          <ul></ul>
+            <li>
+              <a href="https://interpret-robot.github.io/">InterPreT</a> uses a similar feedback and improvement mechanism to learn predicates and refine domain representations through human-provided feedback.
+            </li>
+            <li>
+              The <a href="https://www.roboticsproceedings.org/rss20/p037.html">LASP</a> and <a href="https://cowplanning.github.io/">COWP</a> planners also uses a hybrid architecture to improve existing PDDL plans through error feedback from execution.
+            </li>
+            <li>
+              Tom Silver's work at MIT has recently evaluated both <a href="https://ojs.aaai.org/index.php/AAAI/article/view/30006">LLM code generation for PDDL planning tasks</a> and <a href="https://ojs.aaai.org/index.php/AAAI/article/view/26429">predicate invention for planning abstraction</a>. 
+            </li>
+          </ul>
+        </div>
       </div>
-    </div> -->
-    <!--/ Concurrent Work. -->
-
-  </div>
+    </div>
+    </div>
 </section>
+<!--/ Concurrent Work. -->
 
 
 <section class="section" id="BibTeX">
